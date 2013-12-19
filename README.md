@@ -49,9 +49,9 @@ Shorten will either create a new short url in your database or resolve to a prev
 #####Resolve
 Resolve will return the original URL before shortening if one is available in the database.
 
-    url = 'aGasjn1Ho';
+    hash = 'aGasjn1Ho';
     data = {ip:'127.0.0.1'};
-    var result = urlShotener.resolve(url, data);
+    var result = urlShotener.resolve(hash, data);
     result.then(function(url){
     console.log(url );
     // { 
@@ -66,7 +66,8 @@ Resolve will return the original URL before shortening if one is available in th
     //}
     }).fail(function(err){});
 
-As you can see each time you resolve a url your data passed to the object will be added to an array of hits that way you can record data or analytics each time the url is accessed. 
+**data** is an optional object you would like to be saved with each resolution of a URL and can be used for such things
+as analytics tracking.
 
 Check out [NodeTinyUrl](https://github.com/dropshape/NodeTinyUrl) for a working implementation
 
