@@ -13,11 +13,13 @@ A simple URL Shortening library for NodeJS using [Promises/A+](http://promises-a
     npm install mongoose-url-shortener --save
 
 ####API
-    
+    //require library
+    var MongooseURLShortener = require('mongoose-url-shortener').MongooseURLShortener
     //Setup Mongoose
     var connection = require('mongoose').connect('mongodb:testing');
     //Initialize Shortener
-    var urlShotener = MongooseURLShortener(connection, options);
+    var options = {}
+    var urlShortener = new MongooseURLShortener(connection, options);
 
 #####Options
     {
